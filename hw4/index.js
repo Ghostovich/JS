@@ -66,6 +66,3 @@ if (findNumber == -1) {
 }
 console.log(`сумма - ${sum}`);
 console.log(`минимальное число - ${minValue}`);
-
-
-
