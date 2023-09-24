@@ -1,6 +1,4 @@
 
-
-
 // Задание 1
 // Дан объект numbers. Необходимо в консоль вывести все значения больше или равные 3.
 
@@ -14,15 +12,9 @@
 //   keyin7: 7,
 // }
 
-// keys = Object.keys(numbers)
-
-// for (var i = 0, l = keys.length; i < l; i++) {
-//     if (numbers[keys[i]] >= 3) {
-//       console.log(keys[i] + ': ' + numbers[keys[i]]);
-//   } else {
-//     continue;
-//   }
-// }
+// const values = Object.values(numbers);
+// const result = values.filter(el => el >= 3);
+// console.log(result);
 
 
 // Задание 2
@@ -53,10 +45,47 @@ const post = {
   ],
 };
 
-console.log(post.author);
-console.log(post.comments);
-let comVal= Object.values(post.comments);
-console.log(comVal);
+
+const{author, postId, comments} = post;
+
+for (const key in post.comments) {
+    for (const innerKey in post.comments[key]) {
+        
+     console.log(post.comments[key][innerKey]);
+    }
+    }
+
+
+// const{userId, userName, text, rating} = post.comments;
+// console.log(post.comments.userId);
+
+// for (const key in post.comments.rating) {
+//     for (const innerKey in post.comments.rating[key]) {
+        
+//      console.log(post.comments.rating[key][innerKey]);
+//     }
+//     }
+
+// console.log(post.author);
+// let comVal= Object.values(post.comments);
+// let res = comVal.find(el => el == '2');
+// // console.log(comVal[0]);
+// console.log(res);
+
+
+
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const [evenNumbers, oddNumbers] = numbers.reduce(
+//   (acc, val) => {
+//     acc[val % 2].push(val);
+//     return acc;
+//   },
+//   [[], []]
+// );
+
+// console.log(evenNumbers); // [2, 4, 6, 8]
+// console.log(oddNumbers); // [1, 3, 5, 7, 9]
+
 
 
 
@@ -79,12 +108,14 @@ console.log(comVal);
 //   },
 // ];
 
-// for (let key in products) {
-//   Object.keys(products).forEach((el) => {
-//     products[el] = products[el] * 0.85;
-//   });
-// }
+// for (const key in products) {
+//     for (const innerKey in products[key]) {
+        
+//         products[key][innerKey] = products[key][innerKey] * 0.85;
+//     }
+//     }
 // console.log(products);
+
 
 // Задание 4
 // 1. Необходимо вывести в консоль массив продуктов в котором есть хоть одна фотография используя метод filter. Исходные данные - массив products.
