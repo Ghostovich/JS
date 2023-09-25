@@ -20,74 +20,42 @@
 // Задание 2
 // Необходимо из объекта, который лежит в константе post вывести значения, к которым приписан комментарий, в консоль.
 
-const post = {
-  author: "John", // вывести этот текст
-  postId: 23,
-  comments: [
-    {
-      userId: 10,
-      userName: "Alex",
-      text: "lorem ipsum",
-      rating: {
-        likes: 10,
-        dislikes: 2, // вывести это число
-      },
-    },
-    {
-      userId: 5, // вывести это число
-      userName: "Jane",
-      text: "lorem ipsum 2", // вывести этот текст
-      rating: {
-        likes: 3,
-        dislikes: 1,
-      },
-    },
-  ],
-};
+// const post = {
+//   author: "John", // вывести этот текст
+//   postId: 23,
+//   comments: [
+//     {
+//       userId: 10,
+//       userName: "Alex",
+//       text: "lorem ipsum",
+//       rating: {
+//         likes: 10,
+//         dislikes: 2, // вывести это число
+//       },
+//     },
+//     {
+//       userId: 5, // вывести это число
+//       userName: "Jane",
+//       text: "lorem ipsum 2", // вывести этот текст
+//       rating: {
+//         likes: 3,
+//         dislikes: 1,
+//       },
+//     },
+//   ],
+// };
 
 
-const{author, postId, comments} = post;
-
-for (const key in post.comments) {
-    for (const innerKey in post.comments[key]) {
-        
-     console.log(post.comments[key][innerKey]);
-    }
-    }
-
-
-// const{userId, userName, text, rating} = post.comments;
-// console.log(post.comments.userId);
-
-// for (const key in post.comments.rating) {
-//     for (const innerKey in post.comments.rating[key]) {
-        
-//      console.log(post.comments.rating[key][innerKey]);
-//     }
-//     }
-
+// const arr = Object.values(post.comments);
+// const arrMain = [];
+// const arr1 = Object.values(arr[0]);
+// const arr2 = Object.values(arr[1]);
+// const arrFinal = arrMain.concat(arr1,arr2);
 // console.log(post.author);
-// let comVal= Object.values(post.comments);
-// let res = comVal.find(el => el == '2');
-// // console.log(comVal[0]);
-// console.log(res);
-
-
-
-// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-// const [evenNumbers, oddNumbers] = numbers.reduce(
-//   (acc, val) => {
-//     acc[val % 2].push(val);
-//     return acc;
-//   },
-//   [[], []]
-// );
-
-// console.log(evenNumbers); // [2, 4, 6, 8]
-// console.log(oddNumbers); // [1, 3, 5, 7, 9]
-
-
-
+// const arr3 = Object.values(arr1[3]);
+// console.log(arr3[1]);
+// console.log(arrFinal[4]);
+// console.log(arrFinal[6]);
 
 
 // Задание 3
@@ -108,14 +76,17 @@ for (const key in post.comments) {
 //   },
 // ];
 
-// for (const key in products) {
-//     for (const innerKey in products[key]) {
-        
-//         products[key][innerKey] = products[key][innerKey] * 0.85;
-//     }
-//     }
-// console.log(products);
+// const values = Object.values(products); 
+// const arr = values.reduce((acc,el) => acc.concat(Object.values(el)), []);
+// console.log(arr);
 
+// arr.forEach(element => { 
+//   if (element>100) {
+//     console.log(element*0.85);
+//   } else {
+//     console.log(element);
+//   }
+// });
 
 // Задание 4
 // 1. Необходимо вывести в консоль массив продуктов в котором есть хоть одна фотография используя метод filter. Исходные данные - массив products.
@@ -148,6 +119,8 @@ for (const key in post.comments) {
 //     price: 78,
 //   },
 // ];
+
+
 
 
 
