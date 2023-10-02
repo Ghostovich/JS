@@ -2,8 +2,8 @@
 // найти минимальное число в массиве, решение задание должно состоять из одной
 // строки кода.
 
-// const arr = [1, 5, 7, 9]
-// console.log(Math.min(...arr));
+const arr = [1, 5, 7, 9]
+console.log(Math.min(...arr));
 
 // 2) Напишите функцию createCounter, которая создает счетчик и возвращает объект
 // с двумя методами: increment и decrement. Метод increment должен увеличивать
@@ -24,3 +24,15 @@ function createCounter() {
   }
 };
 
+function createCounter() {
+    let counter = 0;
+    const funcObj = {
+      increment(counter) {
+        counter++;
+      },
+      decrement(counter) {
+        counter--;
+      }
+    };
+    return funcObj;
+  };
