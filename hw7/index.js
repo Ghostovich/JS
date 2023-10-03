@@ -11,7 +11,21 @@
 // const book = new Book("BookName1", "Author1", 123);
 // book.displayInfo(); // "Title: BookName1, Author: Author1, Pages: 123"
 
+class Book {
+  title = "BookName1";
+  author = "Author1";
+  pages = 123;
+  constructor() {
+    this.displayInfo = this.displayInfo.bind(this);
+  }
+  displayInfo() {
+    console.log(`Title: ${this.title}, Author: ${this.author}, Pages: ${this.pages}`);
+  }
+}
 
+const book = new Book();
+
+book.displayInfo();
 
 // Задание 2: "Управление списком студентов"
 // Реализуйте класс Student, представляющий студента, со следующими свойствами и методами:
@@ -24,3 +38,20 @@
 // // Пример использования класса
 // const student = new Student("John Smith", 16, "10th grade");
 // student.displayInfo(); // "Name: John Smith, Age: 16, Grade: 10th grade"
+
+
+class Student {
+  name = "John Smith";
+  age = 16;
+  grade = "10th grade";
+  constructor() {
+    this.displayInfo = this.displayInfo.bind(this);
+  }
+  displayInfo() {
+    console.log(`Name: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`);
+  }
+}
+
+const student = new Student();
+
+student.displayInfo();
