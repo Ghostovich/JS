@@ -31,15 +31,16 @@ const employee = new Employee("John Smith");
 employee.displayInfo(); // "Name: John Smith"
 
 
-class Manager {
+
+class Manager{
   constructor(department) {
     this.department = department;
   }
   displayInfo() {
     console.log(`${this.name}, ${this.department}`);
   }
-  // __proto__: Employee;
 }
+Manager.prototype = Employee;
 
 const manager = new Manager("Jane Doe", "Sales");
 manager.displayInfo(); // "Name: John Doe, Department: Sales"
