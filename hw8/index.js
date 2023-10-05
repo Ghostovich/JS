@@ -31,16 +31,15 @@ const employee = new Employee("John Smith");
 employee.displayInfo(); // "Name: John Smith"
 
 
-
-class Manager{
-  constructor(department) {
+class Manager extends Employee {
+  constructor(name, department) {
+    super(name);
     this.department = department;
   }
   displayInfo() {
     console.log(`${this.name}, ${this.department}`);
   }
 }
-Manager.prototype = Employee;
 
 const manager = new Manager("Jane Doe", "Sales");
 manager.displayInfo(); // "Name: John Doe, Department: Sales"
@@ -77,21 +76,23 @@ class Product {
   }
 }
 
-// Свойство id (номер заказа) - число, уникальный номер заказа.
-// Свойство products (продукты) - массив, содержащий список продуктов в заказе.
-// Метод addProduct(product) - принимает объект класса Product и добавляет его в список продуктов заказа.
-// Метод getTotalPrice() - возвращает общую стоимость заказа, основанную на ценах продуктов.
 
 class Order {
   constructor(id, products) {
+    //число, уникальный номер заказа.
     this.id = id
+    // массив, содержащий список продуктов в заказе.
     this.products = products;
   }
-  addProduct() {
+  addProduct(product) {
     listProduct = 0;
+    // принимает объект класса Product и добавляет его в список продуктов заказа.
+
   }
   getTotalPrice() {
     return TotalPrice = price;
+    // возвращает общую стоимость заказа, основанную на ценах продуктов.
+
   }
 }
 
