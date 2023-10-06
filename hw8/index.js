@@ -76,22 +76,16 @@ class Product {
   }
 }
 
-
 class Order {
   constructor(id, products) {
-    //число, уникальный номер заказа.
     this.id = id
-    // массив, содержащий список продуктов в заказе.
     this.products = products;
   }
   addProduct(product) {
-    listProduct = 0;
-    // принимает объект класса Product и добавляет его в список продуктов заказа.
-
+    this.products = [];
+    this.products.push(product);
   }
-  getTotalPrice() {
-    return TotalPrice = price;
-    // возвращает общую стоимость заказа, основанную на ценах продуктов.
+  getTotalPrice(products) {
 
   }
 }
