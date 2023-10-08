@@ -99,3 +99,8 @@ const product2 = new Product("Headphones", 100, 1);
 order.addProduct(product2);
 
 console.log(order.getTotalPrice()); // Вывод: 1100
+
+
+// В 85 строке мы не должны обнулять то, что лежало в продуктах, эта строка не нужна.
+// В конструктор класса Order мы должны передавать только id, значит products ставится пустым массивом.
+// В getTotalPrice нужно пробежаться по всем this.products и сложить все значения price * quantity этих объектов
