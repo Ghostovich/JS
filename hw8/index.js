@@ -77,16 +77,22 @@ class Product {
 }
 
 class Order {
-  constructor(id, products) {
+  constructor(id) {
     this.id = id
-    this.products = products;
   }
+  products = [];
   addProduct(product) {
-    this.products = [];
     this.products.push(product);
   }
-  getTotalPrice(products) {
-
+  getTotalPrice() {
+    let totalPrice = 0;
+    for (let i = 0; i < this.products.length; i++) {
+      const priceN = this.products[i].price;
+      const quantityN = this.products[i].quantity;
+      totalPrice = totalPrice + priceN * quantityN;
+      
+    }
+    return totalPrice;
   }
 }
 
@@ -99,8 +105,3 @@ const product2 = new Product("Headphones", 100, 1);
 order.addProduct(product2);
 
 console.log(order.getTotalPrice()); // Вывод: 1100
-
-
-// В 85 строке мы не должны обнулять то, что лежало в продуктах, эта строка не нужна.
-// В конструктор класса Order мы должны передавать только id, значит products ставится пустым массивом.
-// В getTotalPrice нужно пробежаться по всем this.products и сложить все значения price * quantity этих объектов
